@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: rust-bot
+    env: python
+    plan: free
+    autoDeploy: false
+    buildCommand: pip install -r requirements.txt
+    startCommand: python boot_init.py && python rust-bot_MAXI5.py
+    envVars:
+      - key: TZ
+        value: Europe/Amsterdam
